@@ -31,3 +31,17 @@ time you want to see a new change, just re-run `npm start` (or leave it running 
 A real installable build (TestFlight/App Store) requires a paid Apple Developer account ($99/yr) and is a
 separate step (`eas build`) — not needed for day-to-day development or for testing on your own phone via
 Expo Go.
+
+## SDK version — deliberately pinned to 54
+
+This project is pinned to Expo SDK 54, not the latest SDK on npm. The Expo Go app on the App Store only
+ever supports one SDK at a time, and it lags behind new `expo` package releases — if this project were on
+a newer SDK than the published Expo Go app, scanning the QR code would fail with a "you need a newer
+version of Expo Go" error even though Expo Go is fully up to date.
+
+Before bumping `expo` to a newer SDK, confirm the Expo Go App Store listing has actually caught up (check
+the version shown in the app, or https://expo.dev/go). If you do bump it, the paired `react`,
+`react-native`, and `expo-*` versions all need to move together — `npx expo install --fix` normally handles
+this, but it depends on network access to Expo's dependency API, which isn't available in every sandbox; if
+it fails, pull the exact paired versions from the `expo` package's own `bundledNativeModules.json` for the
+target SDK.
