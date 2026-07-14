@@ -1,0 +1,58 @@
+:root {
+  --accent: #7c6cf6;
+  --bg: #0b0b0f;
+  --bg-elevated: #17171f;
+  --bg-elevated-2: #1f1f2a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f2f2f7;
+  --text-muted: rgba(242, 242, 247, 0.6);
+  --text-faint: rgba(242, 242, 247, 0.38);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f4f8;
+  --bg-elevated: #ffffff;
+  --bg-elevated-2: #ffffff;
+  --border: rgba(10, 10, 20, 0.08);
+  --text: #16161d;
+  --text-muted: rgba(22, 22, 29, 0.6);
+  --text-faint: rgba(22, 22, 29, 0.4);
+  --shadow-soft: 0 20px 60px rgba(20, 20, 40, 0.12);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app-shell {
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
