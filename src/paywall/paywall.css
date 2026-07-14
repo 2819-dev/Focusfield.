@@ -1,0 +1,236 @@
+.paywall {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 56px 24px 40px;
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 45%),
+    var(--bg);
+}
+
+.paywall__inner {
+  width: min(640px, 100%);
+}
+
+.paywall__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.paywall__title {
+  font-size: 30px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.paywall__subtitle {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0 auto 32px;
+  max-width: 46ch;
+  text-align: center;
+}
+
+.paywall__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.paywall__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+}
+
+.paywall__feature-check {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.plan-toggle {
+  display: flex;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  width: fit-content;
+  margin: 0 auto 24px;
+}
+
+.plan-toggle__option {
+  border: none;
+  background: none;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  position: relative;
+}
+
+.plan-toggle__option--active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.plan-toggle__save {
+  position: absolute;
+  top: -9px;
+  right: -6px;
+  background: color-mix(in srgb, var(--accent) 80%, #000 10%);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.timeline {
+  display: flex;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: 24px 20px 20px;
+  margin-bottom: 28px;
+}
+
+.timeline__node {
+  flex: 1;
+  position: relative;
+  padding-top: 22px;
+  text-align: center;
+}
+
+.timeline__node::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
+}
+
+.timeline__node:first-child::before {
+  left: 50%;
+}
+
+.timeline__node:last-child::before {
+  right: 50%;
+}
+
+.timeline__node--active::before,
+.timeline__node--passed::before {
+  background: var(--accent);
+}
+
+.timeline__marker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border);
+}
+
+.timeline__node--active .timeline__marker,
+.timeline__node--passed .timeline__marker {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.timeline__day {
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline__desc {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding: 0 6px;
+}
+
+.paywall__cta {
+  width: 100%;
+  padding: 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 650;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: transform 0.15s ease;
+}
+
+.paywall__cta:hover {
+  transform: translateY(-1px);
+}
+
+.paywall__fineprint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 0 0 22px;
+  line-height: 1.5;
+}
+
+.paywall__secondary {
+  display: block;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.paywall__secondary:hover {
+  color: var(--text);
+}
+
+.paywall__dev-controls {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.paywall__dev-controls button {
+  margin: 8px 4px 0;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+}
