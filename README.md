@@ -1,2 +1,1 @@
 # Focusfield.
-## scan. focus. repeat.
