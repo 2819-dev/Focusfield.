@@ -104,7 +104,7 @@ export default function SpaceEditor({ theme, space, canDelete, onSave, onDelete,
 }
 
 const styles = StyleSheet.create({
-  backdrop: { ...StyleSheet.absoluteFillObject, backgroundColor: "rgba(0,0,0,0.45)" },
+  backdrop: { position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "rgba(0,0,0,0.45)" },
   anchor: { flex: 1, justifyContent: "flex-end" },
   sheet: { borderTopLeftRadius: 26, borderTopRightRadius: 26, borderWidth: 1, paddingHorizontal: 20, paddingBottom: 12 },
   grabberRow: { alignItems: "center", paddingVertical: 8 },
